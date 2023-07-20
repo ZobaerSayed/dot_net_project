@@ -3,11 +3,22 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+# parameters:
+#   - name: poolSelection
+#     displayName: Agent Pool
+#     type: string
+#     values:
+#       - 'Default'
+# jobs:
+# - Job: Build
+#   pool:
+#      name: 'Default'
+
 trigger:
 - main
 
 pool:
-  vmImage: 'Default'
+  name: 'Default'
 
 variables:
   solution: '**/*.sln'
